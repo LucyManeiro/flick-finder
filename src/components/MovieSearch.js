@@ -23,11 +23,9 @@ function MovieSearch() {
         }
     }
 
-    console.log(movies)
     return (
     <div className="container">
         <div className="search-container">
-            <h2 className="search-heading">Search here</h2>
             <div className="form">
                 <form onSubmit={searchMovies}>
                     <input

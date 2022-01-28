@@ -18,8 +18,9 @@ h1 {
 }
 
 h3 {
-  font-weight: 900;
   color: black;
+  font-size: 1.2rem;
+  padding: .25em;
 }
 
 .subtitle {
@@ -27,11 +28,16 @@ h3 {
   font-weight: 700;
 }
 
+p {
+  margin: 0;
+}
+
 /* =======
 Layout
 ======== */
 .container {
   width:100%;
+  max-width: 800px;
   margin: 0 auto;
   padding: 2em;
 }
@@ -44,17 +50,21 @@ Layout
 .movie-card {
   width: 100%;
   margin-bottom: 2em;
-  display: flex;
   border: 1px solid #707070;
-  margin-top: 2em;
-  margin-bottom: 2em;
-  margin-left: 0;
-  padding: .5em;
+  margin: 2em auto;
+  /* margin: 2em, 1em; */
+  padding: 1em;
   box-shadow: 1px 1px 1px #707070;
 }
 
+.movie-content {
+  display: flex;
+  align-items:flex-start;
+}
+
 .movie-poster {
-  width: 30%;
+  width: 25%;
+  margin-top:.25em;
 }
 
 .poster-image {
@@ -63,14 +73,43 @@ Layout
 }
 
 .movie-info {
-  margin-left: .25em;
-  border: 1px solid magenta;
-  width: 100%
+  margin-left: .5em;
+  width: 70%
 }
 
 .movie-title{
   text-align: center;
+  border-bottom: 2px solid #707070;
+  margin-left: .5em;
+  margin-bottom: 1em;
+  font-weight: 900;
+}
 
+.image {
+  width: 100%
+}
+
+/* .card {
+  margin-bottom: 3em;
+  max-width: 600px;
+} */
+
+.about-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-image-section {
+  width: 100%;
+  margin-bottom: 1em;
+}
+
+.about-image {
+  width: 100%;
+}
+
+.about-info {
+  padding: 1em;
 }
 
 /* Navigation */
@@ -117,4 +156,29 @@ input {
 .btn:hover,
 .btn:focus{
   background-color:red;
+}
+
+@media (min-width: 600px){
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+  }
+
+  .title {
+    padding: 2em;
+  }
+
+  .nav-links {
+    padding: 2em;
+  }
+
+  .about-container {
+    flex-direction: row;
+    padding: 1.5em;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
 }
