@@ -1,38 +1,120 @@
 .App {
-  text-align: center;
+  margin: 0;
+  color: #707070;
+  font-family: "Ubuntu", sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* ========
+Typography
+========== */
+
+
+h1 {
+  margin:0;
+  font-family: 'Playfair Display', serif;
+  color: white;
+  font-weight: 900;
+  font-size: 2.5rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h3 {
+  font-weight: 900;
+  color: black;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.subtitle {
+  margin: 0;
+  font-weight: 700;
+}
+
+/* =======
+Layout
+======== */
+.container {
+  width:100%;
+  margin: 0 auto;
+  padding: 2em;
+}
+
+.search-container {
+  margin-bottom: 2em;
+}
+
+/* movie card */
+.movie-card {
+  width: 100%;
+  margin-bottom: 2em;
   display: flex;
-  flex-direction: column;
+  border: 1px solid #707070;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  margin-left: 0;
+  padding: .5em;
+  box-shadow: 1px 1px 1px #707070;
+}
+
+.movie-poster {
+  width: 30%;
+}
+
+.poster-image {
+  width: 100%;
+  max-width: 300px;
+}
+
+.movie-info {
+  margin-left: .25em;
+  border: 1px solid magenta;
+  width: 100%
+}
+
+.movie-title{
+  text-align: center;
+
+}
+
+/* Navigation */
+.title{
+  padding: .5em;
+}
+
+.nav-container {
+  background-color:black;
+  text-align: center;
+  margin: 0;
+  padding-top: 1em;
+}
+
+.nav-links {
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.nav-link {
+  margin-right: 1em;
+  color: red;
+  font-size: 1.125rem;
+  margin-bottom: .75em;
+}
+
+.nav-link:hover {
   color: white;
+  text-decoration: underline;  
 }
 
-.App-link {
-  color: #61dafb;
+/* Search Form */
+
+.search-bar {
+  margin-right: 2em;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+input {
+  padding: .25em;
+  width: 75%;
+}
+
+.btn:hover,
+.btn:focus{
+  background-color:red;
 }
