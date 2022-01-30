@@ -3,6 +3,9 @@ import MovieItem from "./MovieItem"
 
 function MovieSearch() {
     
+    const URL = process.env.REACT_APP_MOVIE_URL;
+    
+    //state to handle query parameters and movie list
     const [query, setQuery] = useState("");
     const [movies, setMovies] = useState([]);
 
@@ -10,12 +13,13 @@ function MovieSearch() {
         setQuery(e.target.value)
     }
 
-    const searchMovies = async(e) => {
+    //gets movies based on search parameter
+    const handleSubmit = async(e) => {
         e.preventDefault();
-        const url = `https://api.themoviedb.org/3/search/movie?api_key=75f8f70fd52aac7f1994c52e1c71209c&language=en-US&query=${query}&page=1&include_adult=false`
+        const url = `${URL}&query=${query}&page=1&include_adult=false`
         try {
             const response = await fetch(url);
-            const data = await response.json()
+            const data = await response.json();
             setMovies(data.results)
             setQuery("")
         } catch(err){
@@ -24,30 +28,32 @@ function MovieSearch() {
     }
 
     return (
-    <div className="container">
-        <div className="search-container">
-            <div className="form">
-                <form onSubmit={searchMovies}>
-                    <input
-                        type="text"
-                        name="query"
-                        className="search-bar"
-                        placeholder="Enter movie name, i.e. The Wizard of Oz"
-                        value = {query}
-                        onChange={handleChange}
-                    />
-                    <button className="btn btn-dark" type="submit">Search</button>
-                </form>
+        <div className="container">
+            <div className="search-container">
+                <h2>Enter movie title:</h2>
+                    <div className="form">
+                        <form onSubmit={handleSubmit}>
+                            <input
+                                type="text"
+                                name="query"
+                                className="search-bar"
+                                placeholder="i.e. The Wizard of Oz "
+                                value = {query}
+                                onChange={handleChange}
+                                required={true}
+                            />
+                            <button className="btn btn-dark" type="submit">Search</button>
+                        </form>
+                    </div>
             </div>
+
+            <div className="search-results">
+                {movies.map((movie)=> (
+                    <MovieItem key={movie.id} movie={movie}/>
+                ))}
+            </div> 
         </div>
-        
-        <div className="search-results">
-            {movies.map((movie)=> (
-                <MovieItem key={movie.id} movie={movie}/>
-            ))}
-        </div>
-    </div>
-  )
+    )
 }
 
 export default MovieSearch;

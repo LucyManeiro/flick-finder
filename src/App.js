@@ -6,6 +6,7 @@ import About from "./pages/About"
 
 function App() {
   return (
+    <>
     <Router>
     <div className="App">
       <NavBar/>
@@ -15,7 +16,7 @@ function App() {
       </Routes>
     </div>
     </Router>
-
+    </>
   );
 }
 
