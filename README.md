@@ -4,7 +4,7 @@ This application was completed as part of a coding challenge.
 This application allows a user to search for movies by title, and will display any matching results below. 
 
 ## Live application: 
-A live version of this project can be viewed at ...
+A live version of this project can be viewed at
 https://flick-finder.vercel.app/
 
 
